@@ -276,8 +276,9 @@ body {
     font-size: 60%;
   }
   .container {
-    width: 99% !important;
-    height: 90vh !important;
+    width: 100% !important;
+    height: fill-available;
+    height: -webkit-fill-available;
   }
   .humidityWindSpeedContainer {
     font-size: 2rem;
