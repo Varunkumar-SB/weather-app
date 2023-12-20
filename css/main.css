@@ -289,9 +289,12 @@ body {
     gap: 2rem;
   }
   .outputLocation {
-    font-size: 4rem;
-    position: relative;
     margin-top: 3rem;
     margin-bottom: -3rem;
+  }
+  #changeTheme,
+  .toggleLocationForm,
+  .toggleLcationFormBg {
+    top: 6rem;
   }
 }
