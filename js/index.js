@@ -417,3 +417,9 @@ function changeTheme() {
 document.getElementById("changeTheme").addEventListener("click", changeTheme);
 
 //#000 End
+
+window.onload = function () {
+  window.scrollTo({
+    top: 0,
+  });
+};
