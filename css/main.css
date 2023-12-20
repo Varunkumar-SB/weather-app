@@ -52,23 +52,20 @@ body {
 }
 
 #toggleLocationForm:checked ~ #locationForm {
-  opacity: 1;
-  width: 100%;
+  display: flex;
 }
 
 #locationForm {
-  opacity: 0;
   z-index: 2;
   position: absolute;
   left: 50%;
-  width: 0%;
+  width: 100%;
   transform: translate(-50%, 0);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  transition: all 0.1s ease-in-out;
 }
 
 .formTitle {
@@ -190,7 +187,7 @@ body {
     var(--secondary-color),
     var(--tertiary-color)
   );
-  transition: 0.2s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 }
 
 #changeTheme {
