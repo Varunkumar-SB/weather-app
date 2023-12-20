@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <script
+      src="https://kit.fontawesome.com/4e6da1398d.js"
+      crossorigin="anonymous"
+    ></script>
+    <div class="container absolute-center">
+      <main class="main">
+        <button id="changeTheme"><i class="fa-solid fa-sun"></i></button>
+        <input type="checkbox" id="toggleLocationForm" checked />
+        <label for="toggleLocationForm" class="toggleLocationForm">
+          <i class="fa-solid fa-location-dot"></i>
+        </label>
+        <div class="toggleLcationFormBg"></div>
+        <div id="weatherData"><div class="weatherInfo"></div></div>
+        <form action="javascript:void(0)" id="locationForm">
+          <label class="formTitle">Enter your location</label>
+          <button id="locationBtn">Get my location</button>
+          <div class="form__search">
+            <search>
+              <input
+                type="text"
+                id="countryInput"
+                placeholder="Country Name"
+                autocomplete="off"
+                required
+              />
+            </search>
+            <div id="countryList"></div>
+          </div>
+          <div class="form__search">
+            <search>
+              <input
+                type="text"
+                id="cityInput"
+                placeholder="City Name"
+                autocomplete="off"
+                required
+              />
+            </search>
+            <div id="cityList"></div>
+          </div>
+          <div class="raidos">
+            <div class="form__radio">
+              <input
+                type="radio"
+                name="weatherUnit"
+                value="metric"
+                id="metric"
+                required
+              />
+              <label for="metric">Metric</label>
+            </div>
+            <div class="form__radio">
+              <input
+                type="radio"
+                name="weatherUnit"
+                value="imperial"
+                id="imperial"
+                required
+              />
+              <label for="imperial">Imperial</label>
+            </div>
+          </div>
+          <button id="getWeatherInfo">Search</button>
+        </form>
+      </main>
+    </div>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10px = 1rem */
+}
+
+/*GREAT RESET*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  min-width: 100%;
+  background-color: var(--tertiary-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 70rem;
+  height: 70rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 1px var(--primary-color);
+  overflow: hidden;
+}
+
+.main {
+  min-width: 100%;
+  height: 100%;
+
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+}
+
+#toggleLocationForm {
+  display: none;
+}
+
+#toggleLocationForm:checked ~ .toggleLcationFormBg {
+  transform: scale(80);
+}
+
+#toggleLocationForm:checked ~ #locationForm {
+  opacity: 1;
+  width: 100%;
+}
+
+#locationForm {
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  width: 0%;
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.formTitle {
+  font-size: 4rem;
+}
+
+#countryInput,
+#cityInput {
+  min-width: 100%;
+  min-height: 4rem;
+}
+
+.listItem {
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  position: sticky;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.highlightedListItem {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+#locationBtn,
+#getWeatherInfo {
+  min-width: 30rem;
+  height: 4rem;
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+}
+
+.form__search {
+  min-width: 30rem;
+  height: 4rem;
+}
+
+.form__search input {
+  font-size: 2rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 1rem;
+  color: var(--primary-color);
+  transition: 0.1s all ease-in-out;
+}
+
+.raidos {
+  display: flex;
+  gap: 4rem;
+}
+
+.form__radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 3rem;
+}
+
+.form__radio input {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.form__radio label {
+  cursor: pointer;
+}
+
+#changeTheme,
+.toggleLocationForm {
+  position: absolute;
+  top: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#changeTheme:hover,
+.toggleLocationForm:hover,
+#locationBtn:hover,
+.form__search input:hover,
+#getWeatherInfo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 0px 10px 1px var(--primary-color);
+}
+
+.toggleLcationFormBg {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 1;
+  background-image: radial-gradient(
+    var(--secondary-color),
+    var(--tertiary-color)
+  );
+  transition: 0.2s all ease-in-out;
+}
+
+#changeTheme {
+  left: 3rem;
+}
+
+.toggleLocationForm {
+  right: 3rem;
+}
+
+#weatherData {
+  width: 60%;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.outputLocation {
+  font-size: 4rem;
+  position: relative;
+  margin-top: -1rem;
+}
+
+.outputCountryCode {
+  text-transform: uppercase;
+  font-size: small;
+  position: absolute;
+}
+
+.outputTemp {
+  font-size: 8rem;
+  margin-bottom: -5rem;
+}
+
+.outputWeather {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outputFeelsLikeTemp {
+  font-size: 2rem;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
+.humidityWindSpeedContainer {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.humidityBox,
+.windSpeedBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.humidityBox i,
+.windSpeedBox i {
+  font-size: 5rem;
+}
+
+.humidityBox div,
+.windSpeedBox div {
+  display: flex;
+  flex-direction: column;
+}
+
+.outputLastUpdated {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
