@@ -229,6 +229,10 @@ function getWeatherInfo() {
   const isAnyRadioSelected = [...metricRadios].some((radio) => radio.checked);
 
   if (!isAnyRadioSelected || !countryInput.value || !cityInput.value) {
+    document.getElementById("toggleLocationForm").checked = true;
+    setTimeout(() => {
+      document.getElementById("locationForm").style.display = "flex";
+    }, 90);
     return;
   } else {
     localStorage.setItem("localStorageCity", cityInput.value);
@@ -249,9 +253,11 @@ function getWeatherInfo() {
       })
       .then((data) => {
         weatherInfo = data;
-        console.log(weatherInfo);
         displayWeather(weatherInfo);
         document.getElementById("toggleLocationForm").checked = false;
+        setTimeout(() => {
+          document.getElementById("locationForm").style.display = "none";
+        }, 90);
       })
       .catch((error) => {
         console.error("API Error:", error);
@@ -312,6 +318,22 @@ function displayWeather(weatherInfo) {
   </div>
   <span class="outputLastUpdated">${lastUpdated}</span>`;
 }
+
+function checkChecked() {
+  if (document.getElementById("toggleLocationForm").checked === true) {
+    setTimeout(() => {
+      document.getElementById("locationForm").style.display = "none";
+    }, 90);
+  } else {
+    setTimeout(() => {
+      document.getElementById("locationForm").style.display = "flex";
+    }, 90);
+  }
+}
+
+document
+  .querySelector(".toggleLocationForm")
+  .addEventListener("click", checkChecked);
 
 //#000 End
 
