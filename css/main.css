@@ -278,6 +278,8 @@ body {
   .container {
     width: 100% !important;
     height: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
   .humidityWindSpeedContainer {
     font-size: 2rem;
