@@ -67,7 +67,6 @@ function convertUnixTimestampTo12HourClock(unixTimestamp) {
 
   const hours = dateObject.getHours();
   const minutes = dateObject.getMinutes();
-  const seconds = dateObject.getSeconds();
 
   const ampm = hours >= 12 ? "PM" : "AM";
   const formattedHours = hours % 12 || 12;
@@ -243,8 +242,17 @@ function getWeatherInfo() {
         localStorage.setItem("localStorageUnit", unitOfMeasurement);
       }
     }
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value},${countryCode}&appid=f8a66323cbe54ebbeff8181bf5113da2&units=${unitOfMeasurement}`;
-    fetch(apiUrl)
+    fetch("https://api-key-manager.glitch.me/weather", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        cityName: cityInput.value,
+        countryCode,
+        unitOfMeasurement,
+      }),
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -346,9 +354,13 @@ function getUserLocation() {
       const { latitude, longitude } = position.coords;
 
       // Call the IP geolocation service
-      fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=f8a66323cbe54ebbeff8181bf5113da2`
-      )
+      fetch("https://api-key-manager.glitch.me/weather/location", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ lat: latitude, lon: longitude }),
+      })
         .then((response) => response.json())
         .then((data) => {
           countryCode = data.sys.country.toLowerCase();
