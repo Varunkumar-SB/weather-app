@@ -242,7 +242,7 @@ function getWeatherInfo() {
         localStorage.setItem("localStorageUnit", unitOfMeasurement);
       }
     }
-    fetch("https://api-key-manager.glitch.me/weather", {
+    fetch("https://able-badly-chipmunk.ngrok-free.app/weather", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -354,7 +354,7 @@ function getUserLocation() {
       const { latitude, longitude } = position.coords;
 
       // Call the IP geolocation service
-      fetch("https://api-key-manager.glitch.me/weather/location", {
+      fetch("https://able-badly-chipmunk.ngrok-free.app/weather/location", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
