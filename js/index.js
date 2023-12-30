@@ -285,7 +285,7 @@ document
 //#fff Code for displaying the weather info
 
 function displayWeather(weatherInfo) {
-  console.log(countryCode);
+  countryCode = weatherInfo.sys.country;
   const weatherName = weatherInfo.weather[0].main;
   const weatherIcon = `https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`;
   const lastUpdated = `Last updated ${convertUnixTimestampTo12HourClock(
