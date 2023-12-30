@@ -223,6 +223,9 @@ cityInput.addEventListener("focusin", () => {
 //#fff Code for extracting weather info
 
 function getWeatherInfo() {
+  countryCode = countryInfo.find(
+    (item) => item.name === countryInput.value
+  ).code;
   const metricRadios = document.getElementsByName("weatherUnit");
 
   const isAnyRadioSelected = [...metricRadios].some((radio) => radio.checked);
