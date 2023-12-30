@@ -259,13 +259,13 @@ function getWeatherInfo() {
       .then((data) => {
         weatherInfo = data;
         displayWeather(weatherInfo);
+        document.getElementById("weatherData").style.display = "block";
+        document.getElementById("locationForm").style.display = "none";
       })
       .catch((error) => {
         console.error("API Error:", error);
       });
   }
-  document.getElementById("weatherData").style.display = "none";
-  document.getElementById("locationForm").style.display = "flex";
 }
 
 document
