@@ -259,6 +259,8 @@ function getWeatherInfo() {
       .then((data) => {
         weatherInfo = data;
         displayWeather(weatherInfo);
+        document.getElementById("weatherData").style.display = "none";
+        document.getElementById("locationForm").style.display = "flex";
       })
       .catch((error) => {
         console.error("API Error:", error);
@@ -403,19 +405,20 @@ if (
 } else {
   document.getElementById("weatherData").style.display = "none";
   document.getElementById("locationForm").style.display = "flex";
+  document
+    .querySelector(".toggleLocationForm")
+    .addEventListener("click", () => {
+      if (
+        window.getComputedStyle(document.getElementById("weatherData"))
+          .display === "block"
+      ) {
+        document.getElementById("weatherData").style.display = "none";
+        document.getElementById("locationForm").style.display = "flex";
+      } else {
+        document.getElementById("weatherData").style.display = "block";
+        document.getElementById("locationForm").style.display = "none";
+      }
+    });
 }
-
-document.querySelector(".toggleLocationForm").addEventListener("click", () => {
-  if (
-    window.getComputedStyle(document.getElementById("weatherData")).display ===
-    "block"
-  ) {
-    document.getElementById("weatherData").style.display = "none";
-    document.getElementById("locationForm").style.display = "flex";
-  } else {
-    document.getElementById("weatherData").style.display = "block";
-    document.getElementById("locationForm").style.display = "none";
-  }
-});
 
 //#000 End
