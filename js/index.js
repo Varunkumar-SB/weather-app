@@ -402,9 +402,6 @@ if (
   getWeatherInfo();
   document.getElementById("weatherData").style.display = "block";
   document.getElementById("locationForm").style.display = "none";
-} else {
-  document.getElementById("weatherData").style.display = "none";
-  document.getElementById("locationForm").style.display = "flex";
   document
     .querySelector(".toggleLocationForm")
     .addEventListener("click", () => {
@@ -419,6 +416,9 @@ if (
         document.getElementById("locationForm").style.display = "none";
       }
     });
+} else {
+  document.getElementById("weatherData").style.display = "none";
+  document.getElementById("locationForm").style.display = "flex";
 }
 
 //#000 End
