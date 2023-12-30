@@ -230,6 +230,8 @@ body {
   text-transform: uppercase;
   font-size: small;
   position: absolute;
+  margin-top: 10px;
+  margin-left: 2px;
 }
 
 .outputTemp {
