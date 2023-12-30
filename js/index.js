@@ -285,9 +285,6 @@ document
 //#fff Code for displaying the weather info
 
 function displayWeather(weatherInfo) {
-  countryCode = countryInfo.find(
-    (item) => item.name === countryInput.value
-  ).code;
   const weatherName = weatherInfo.weather[0].main;
   const weatherIcon = `https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png`;
   const lastUpdated = `Last updated ${convertUnixTimestampTo12HourClock(
@@ -305,7 +302,9 @@ function displayWeather(weatherInfo) {
     1
   )}${tempUnit}`;
   document.querySelector(".outputLocation").innerText = cityInput.value;
-  document.querySelector(".outputCountryCode").innerText = countryCode;
+  document.querySelector(".outputCountryCode").innerText = countryInfo.find(
+    (item) => item.name === countryInput.value
+  ).code;
   document.querySelector(".outputTemp").innerText = temp;
   document.querySelector(".outputWeatherImg").src = weatherIcon;
   document.querySelector(".outputWeatherName").innerText = weatherName;
