@@ -209,6 +209,7 @@ body {
 
 #weatherData {
   width: 60%;
+  display: none;
 }
 
 .weatherInfo {
