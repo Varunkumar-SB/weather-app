@@ -298,33 +298,15 @@ function displayWeather(weatherInfo) {
     weatherInfo.main.feels_like,
     1
   )}${tempUnit}`;
-  document.querySelector(".weatherInfo").innerHTML = `
-  <span class="outputLocation">
-    ${cityInput.value} <span class="outputCountryCode">${countryCode}</span>
-  </span>
-  <span class="outputTemp">${temp}</span>
-  <span class="outputWeather">
-    <img src=${weatherIcon} alt="weatherImg" />
-    <span>${weatherName}</span>
-  </span>
-  <span class="outputFeelsLikeTemp">${feelsLike}</span>
-  <div class="humidityWindSpeedContainer">
-    <div class="humidityBox">
-      <i class="fa-solid fa-water"></i>
-      <div>
-        <span class="outputHumidity">${humidity}%</span>
-        <span>Humidity</span>
-      </div>
-    </div>
-    <div class="windSpeedBox">
-      <i class="fa-solid fa-wind"></i>
-      <div>
-        <span class="outputWindSpeed">${windSpeed}</span>
-        <span>Wind speed</span>
-      </div>
-    </div>
-  </div>
-  <span class="outputLastUpdated">${lastUpdated}</span>`;
+  document.querySelector(".outputLocation").innerText = cityInput.value;
+  document.querySelector(".outputCountryCode").innerText = countryCode;
+  document.querySelector(".outputTemp").innerText = temp;
+  document.querySelector(".outputWeatherImg").src = weatherIcon;
+  document.querySelector(".outputWeatherName").innerText = weatherName;
+  document.querySelector(".outputFeelsLikeTemp").innerText = feelsLike;
+  document.querySelector(".outputHumidity").innerText = `${humidity}%`;
+  document.querySelector(".outputWindSpeed").innerText = windSpeed;
+  document.querySelector(".outputLastUpdated").innerText = lastUpdated;
 }
 
 function checkChecked() {

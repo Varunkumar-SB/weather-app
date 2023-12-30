@@ -25,7 +25,36 @@
           <i class="fa-solid fa-location-dot"></i>
         </label>
         <div class="toggleLcationFormBg"></div>
-        <div id="weatherData"><div class="weatherInfo"></div></div>
+        <div id="weatherData">
+          <div class="weatherInfo">
+            <span class="outputLocation">
+              <span class="outputCountryCode"></span>
+            </span>
+            <span class="outputTemp"></span>
+            <span class="outputWeather">
+              <img alt="weatherImg" class="outputWeatherImg" />
+              <span class="outputWeatherName"></span>
+            </span>
+            <span class="outputFeelsLikeTemp"></span>
+            <div class="humidityWindSpeedContainer">
+              <div class="humidityBox">
+                <i class="fa-solid fa-water"></i>
+                <div>
+                  <span class="outputHumidity"></span>
+                  <span>Humidity</span>
+                </div>
+              </div>
+              <div class="windSpeedBox">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <span class="outputWindSpeed"></span>
+                  <span>Wind speed</span>
+                </div>
+              </div>
+            </div>
+            <span class="outputLastUpdated"></span>
+          </div>
+        </div>
         <form action="javascript:void(0)" id="locationForm">
           <label class="formTitle">Enter your location</label>
           <button id="locationBtn">
